@@ -58,13 +58,15 @@ namespace Assets.Menus
             {
                 GameManager.Instance.CreateConfigFile();
             }
-
+#if REWIRED
             if (_inputs.Common_Inputs.F4)
             {
                 InputMappingInCourse = true;
                 RewiredJoystickAssigner.UnbindPlayerIds();
             }
+#endif
             MenuResult res;
+#if REWIRED
             if (InputMappingInCourse)
             {
                 if(RewiredJoystickAssigner.AssignPlayerIds())
@@ -73,8 +75,10 @@ namespace Assets.Menus
                     System.Threading.Thread.Sleep(300);
                 }
                 res = MenuResult.Remain;
+
             }
             else
+#endif
             {
                 res = UpdateMenu(_inputs.P1_Inputs, _inputs.P2_Inputs);
             }

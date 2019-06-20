@@ -1,4 +1,5 @@
 ﻿
+#if REWIRED
 using UnityEngine;
 using System.Collections;
 using Rewired;
@@ -339,3 +340,4 @@ class RewiredJoystickAssigner
         }
     }
 }
+#endif

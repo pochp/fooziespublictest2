@@ -121,13 +121,13 @@ public abstract class ApplicationState
     public virtual string GetDebugInfo()
     {
         var output = "current state : " + this.GetType().Name + Environment.NewLine;
-
+#if REWIRED
         if (InputMappingInCourse)
         {
             output += "P1 Joystick : " + RewiredJoystickAssigner.GetInputName(true) + Environment.NewLine;
             output += "P2 Joystick : " + RewiredJoystickAssigner.GetInputName(false) + Environment.NewLine;
         }
-
+#endif
         return output;
     }
 }

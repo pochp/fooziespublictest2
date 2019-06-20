@@ -86,7 +86,7 @@ public class GameLoop : MonoBehaviour {
     {
         return Assets.Input.InputSources.InputSourceManager.GetInputs(_p1);
         //rewired hidden by inputsourcemanager now to allow AI and netplay
-        return InputReaderRewired.GetInputs(_p1);
+        //return InputReaderRewired.GetInputs(_p1);
         //not rewired version, default unity input binding
         short direction = 5;
         SinglePlayerInputs inputs = new SinglePlayerInputs();
